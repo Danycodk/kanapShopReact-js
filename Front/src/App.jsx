@@ -1,14 +1,18 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+// import React from 'react';
+import Header from "./layout/header/header"
+import Footer from "./layout/footer/footer"
+import PageHeaderBanner from "./componentsGlobal/ui/pageHeaderBanner/pageHeaderBanner"
+import Home from "./pages/home/home"
 
 function App() {
-  const [count, setCount] = useState(0)
+  //  const [count, setCount] = useState(0)
 
   return (
     <>
-      
+      <Header />
+      <PageHeaderBanner/>
+      <Home/>
+      <Footer />
     </>
   )
 }

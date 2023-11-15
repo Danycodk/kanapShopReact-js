@@ -1,7 +1,7 @@
-import './App.css'
+import './navBar.scss'
 
 function NavBar() {
-  const [count, setCount] = useState(0)
+  // const [count, setCount] = useState(0)
 
   return (
     <>

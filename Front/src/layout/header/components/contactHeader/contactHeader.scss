@@ -1,3 +1,17 @@
 .contact-header{
+    gap:10px 0 ;
+    // gap: 0 30px;
+    color:#fff ;
+    display:flex ;
+    height: 40px;
+    align-items: center;
+    justify-content:start;
     background-color: #3498db;
+    // box-shadow: ;
+    li{
+        gap: 0 10px;
+        margin-left: 90px;
+        display: flex;
+        
+    }
 }

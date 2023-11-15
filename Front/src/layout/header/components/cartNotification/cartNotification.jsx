@@ -1,13 +1,13 @@
-import './App.css'
+import './CartNotification.scss'
 
 function CartNotification() {
-  const [count, setCount] = useState(0)
+  // const [count, setCount] = useState(0)
 
   return (
     <>
       <div className="card-notification">
         <pan>0</pan>
-        <i class="fa-solid fa-cart-shopping"></i>
+        <i className="fa-solid fa-cart-shopping"></i>
       </div>
     </>
   )

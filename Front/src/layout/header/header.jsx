@@ -1,14 +1,21 @@
-import './header.css'
-
+import './header.scss'
+import ContactHeader from './components/contactHeader/contactHeader'
+import CartNotification from "./components/cartNotification/cartNotification"
+import NavBar from "./components/navBar/navBar" ;
 function Header() {
-  const [count, setCount] = useState(0)
+  // const [count, setCount] = useState(0)
 
   return (
     <>
       <header>
+        <ContactHeader/>
         <div className="realHeader">
-        <i class="fa-solid fa-shield-dog"></i>
+          <i className="fa-solid fa-leaf"></i>
+          {/* <i className="fa-solid fa-bars"></i> */}
+          <NavBar/> 
+          <CartNotification/>
         </div>
+
       </header>
     </>
   )
