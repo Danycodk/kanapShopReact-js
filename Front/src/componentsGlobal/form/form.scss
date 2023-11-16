@@ -1,0 +1,19 @@
+form{
+    display: flex;
+    flex-direction: column;
+    gap:15px ;
+    margin: auto;
+    .cart__order__form__question{
+        font-size: 18px;
+        label{
+            display:block;
+        }
+        input{
+            height:30px;
+            width: 520px;
+            border-radius: 5px;
+        }
+        #email{
+        }
+    }
+}
