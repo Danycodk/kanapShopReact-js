@@ -6,7 +6,12 @@ function Home() {
   return (
     <>
       <section>
-        <Card/>
+        <div className="ourProduct">
+          <h2>Our couchs</h2>
+        </div>
+        <div className="card-div">
+          <Card/>
+        </div>
       </section>
     </>
   )

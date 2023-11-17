@@ -2,4 +2,14 @@ section{
     width: 90%;
     // height: 400px;
     margin: auto;
+    .ourProduct{
+        display: flex;
+        height: 100px;
+        justify-content: center;
+    }
+    .card-div{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
 }
