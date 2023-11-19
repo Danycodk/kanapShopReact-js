@@ -2,6 +2,7 @@ import './header.scss'
 import ContactHeader from './components/contactHeader/contactHeader'
 import CartNotification from "./components/cartNotification/cartNotification"
 import NavBar from "./components/navBar/navBar" ;
+import PageHeaderBanner from "../../componentsGlobal/ui/pageHeaderBanner/pageHeaderBanner"
 function Header() {
   // const [count, setCount] = useState(0)
 
@@ -15,8 +16,8 @@ function Header() {
           <NavBar/> 
           <CartNotification/>
         </div>
-
       </header>
+      <PageHeaderBanner />
     </>
   )
 }

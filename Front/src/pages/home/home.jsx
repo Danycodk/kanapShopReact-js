@@ -1,5 +1,6 @@
 import './home.scss'
 import Card from "./card/card"
+// import PageHeaderBanner from "../../componentsGlobal/ui/pageHeaderBanner/pageHeaderBanner"
 function Home() {
   // const [count, setCount] = useState(0)
 

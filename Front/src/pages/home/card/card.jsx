@@ -1,4 +1,6 @@
+import { Link } from 'react-router-dom';
 import './card.scss'
+// import {NavLink} from "react-router-dom";
 import  { useState, useEffect } from 'react';
 function Card() {
    const [count, setCount] = useState([])
@@ -25,7 +27,8 @@ function Card() {
 
   return (
     <>
-      {count.map((couch, index)=>(<div className="card"  key={index}>
+      {count.map((couch, index)=>(<Link to="/productDetails" key={index}>
+        <div className="card"  >
         <figure>
           <img  src={couch.imageUrl}  alt="couch" />
             <figcaption>
@@ -33,7 +36,9 @@ function Card() {
               <p>{couch.price}</p>
             </figcaption>
         </figure>
-      </div>)) }
+      </div>
+        </Link>
+        )) }
 
       {/* <div className="card"> */}
         {/* <figure>
