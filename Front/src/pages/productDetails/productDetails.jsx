@@ -1,11 +1,38 @@
 import './ProductDetails.scss'
+import {useParams} from "react-router-dom"
+import  { useState, useEffect } from 'react';
 
 function ProductDetails() {
   // const [count, setCount] = useState(0)
 // import testImg from "../../assets/images/"
+const [count, setCount] = useState([])
+useEffect(() => {
+  // let ignore = false;
+  async function fetchTodoList() {
+    try {
+      const response = await fetch('http://localhost:3000/api/products');
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+
+      const data = await response.json();
+      setCount(data);
+    } 
+    catch (error) {
+      console.error('Oops, an error occurred:', error);
+
+    } 
+  }
+  fetchTodoList();
+}, []);
+
+const {productId} = useParams()
+const thisProduct = count.find(prod => prod._id === productId)
+console.log(thisProduct)
+
   return (
     <>
-      <section>
+      <section className="section-productDetails">
         <div className="product-details">
           <figure>
             <img src="https://m.media-amazon.com/images/I/71TL0ozTlML.jpg" />

@@ -23,11 +23,12 @@ function Card() {
     }
     fetchTodoList();
   }, []);
-  console.log('Rendering Card component');
+  // console.log('Rendering Card component');
+  
 
   return (
     <>
-      {count.map((couch, index)=>(<Link to="/productDetails" key={index}>
+      {count.map((couch, index)=>(<Link to={`/productDetails/${couch._id}`} key={index}>
         <div className="card"  >
         <figure>
           <img  src={couch.imageUrl}  alt="couch" />

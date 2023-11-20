@@ -1,3 +1,21 @@
-.description-in-cart{
-    background-color: #fff;
+.order{
+    display: flex;
+    // border-style: solid;
+    justify-content: space-around;
+    padding: 25px 0;
+    margin-top: 50px;
+    border-bottom-style: solid;
+    border-color: #fff;
+    border-width: 1px;
+    // &:nth-child(1){
+    //     padding: 15px 0;
+    //   }
+    figure{
+        img{
+            width: 300px;
+            height: 250px;
+        }
+    }
+    // .description-in-cart{
+    // } 
 }

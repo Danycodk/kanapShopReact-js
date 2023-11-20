@@ -3,6 +3,7 @@ import ContactHeader from './components/contactHeader/contactHeader'
 import CartNotification from "./components/cartNotification/cartNotification"
 import NavBar from "./components/navBar/navBar" ;
 import PageHeaderBanner from "../../componentsGlobal/ui/pageHeaderBanner/pageHeaderBanner"
+import { NavLink } from 'react-router-dom';
 function Header() {
   // const [count, setCount] = useState(0)
 
@@ -11,7 +12,9 @@ function Header() {
       <header>
         <ContactHeader/>
         <div className="realHeader">
-          <i className="fa-solid fa-leaf"></i>
+          <NavLink to="./">
+            <i className="fa-solid fa-leaf"></i>
+          </NavLink>
           {/* <i className="fa-solid fa-bars"></i> */}
           <NavBar/> 
           <CartNotification/>

@@ -1,19 +1,26 @@
-section{
-    display: flex;
-    flex-direction:row-reverse;
-    justify-content: center;
-    gap: 0 80px;
-    height: 700px;
-    background-color: rgb(249 250 251 ) ;
+.section-cart{
+     display: flex;
+     flex-direction:column;
+     justify-content: center;
+     color: #fff;
+     width: 100%;
+    // gap: 0 80px;
+    // height: 800px;
+    background-color: #3498db ;
     // background-color: #3498db;
     .order-summary{
-        width: 40%;
-        margin-top: 30px;
-        background-color: #fff;
+        padding-top: 40px;
+        width: 90%;
+        margin: auto;
         border-radius: 20px;
+        h2{
+            text-align: center;
+        }
     }
     .contact-information{
+        padding-top: 70px;
+        padding-bottom: 130px;
         width: 40%;
-        margin-top: 30px;
+        margin:auto;
     }
 }

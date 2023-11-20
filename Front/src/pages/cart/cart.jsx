@@ -6,7 +6,7 @@ function Cart() {
   
     return (
       <>
-      <section>
+      <section className="section-cart">
         <div className="order-summary">
           <h2>Order summary</h2>
           <CardInCart />
