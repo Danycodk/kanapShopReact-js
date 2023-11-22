@@ -5,15 +5,16 @@ import  { useState, useEffect } from 'react';
 function ProductDetails() {
   // const [count, setCount] = useState(0)
 // import testImg from "../../assets/images/"
-const [count, setCount] = useState([])
+const {productId} = useParams()
+const [count, setCount] = useState(null)
 useEffect(() => {
   // let ignore = false;
-  async function fetchTodoList() {
+  async function fetchTodoListOne() {
     try {
-      const response = await fetch('http://localhost:3000/api/products');
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
-      }
+      const response = await fetch(`http://localhost:3000/api/products/${productId}`);
+      // if (!response.ok) {
+        // throw new Error('Network response was not ok');
+      // }
 
       const data = await response.json();
       setCount(data);
@@ -23,35 +24,39 @@ useEffect(() => {
 
     } 
   }
-  fetchTodoList();
-}, []);
+  fetchTodoListOne();
+}, [productId]);
 
-const {productId} = useParams()
-const thisProduct = count.find(prod => prod._id === productId)
-console.log(thisProduct)
+// const thisProduct = count.find(prod =>  String(prod._id) === productId)
+console.log(count)
+
+
 
   return (
     <>
       <section className="section-productDetails">
         <div className="product-details">
           <figure>
-            <img src="https://m.media-amazon.com/images/I/71TL0ozTlML.jpg" />
+          {count &&<img src={count.imageUrl} alt=''/> }
           </figure>
           <div className="item__content">
             <div className="item__content__titlePrice">
-              {/* <h1 id="title"><!-- Nom du produit --></h1> */}
-              <p>Price : <span id="price">{/*<!-- 42 -->*/}</span>€</p>   {/* */}
+              {/* <h1 id="title">{thisProduct.name}</h1> */}
+              {/* <p>Price : <span id="price">  {thisProduct.price}   </span>€</p>    */}
             </div>
             <div className="item__content__description">
               <p className="item__content__description__title">Description :</p>
-              <p id="description">  {/* <!-- Dis enim malesuada risus sapien gravida nulla nisl arcu. -->*/} </p>
+              {/* <p id="description">  {thisProduct.description} </p>   */}
             </div>
             <div className="item__content__settings">
               <div className="item__content__settings__color">
                 <label htmlFor="color-select">Choose a color :</label>
                 <select name="color-select" id="colors">
-                    <option value="">-- choose one color --</option>
-                    {/* <!-- <option value="vert">vert</option>
+                  <option value="">-- choose one color --</option>
+                  {/* {count.map((couch, index)=>(<option value="vert">vert</option> */}
+
+                  {/* )) } */}
+                     {/* <option value="vert">vert</option> */}
                     {/* <!-- <option value="vert">vert</option>
                     <option value="blanc">blanc</option> --> */}
                 </select>
