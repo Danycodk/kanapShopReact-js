@@ -16,7 +16,7 @@ function CartInCart() {
       </div>
       <div className="modification">
           <input type="number" name="" value="" />        
-          <i className="fa-solid fa-trash"></i>
+          <i className="fa-solid fa-trash normalColor"></i>
       </div>
     </div>
     </>

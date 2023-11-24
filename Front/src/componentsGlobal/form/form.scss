@@ -17,3 +17,20 @@ form{
         // }
     }
 }
+
+.cart__order__form__submit{
+    display: flex;
+    justify-content: center;
+    input{
+        margin-top: 30px;
+        color:#fff ;
+        padding: 15px 30px;
+        font-weight: bold;
+        cursor: pointer;
+        border-radius: 20px;
+        background-color: #2c3e50;
+        &:hover{
+            transform: scale(1.1);
+        }
+    }
+}

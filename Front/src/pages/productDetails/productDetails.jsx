@@ -26,32 +26,50 @@ useEffect(() => {
   }
   fetchTodoListOne();
 }, [productId]);
+const [inputValueColor, setInputValueColor] = useState('');
 
-// const thisProduct = count.find(prod =>  String(prod._id) === productId)
-console.log(count)
+const handleInputChange = (event) => {
+  setInputValueColor(event.target.value);
+};
+/////
+const [inputValueQty, setInputValueQty] = useState('');
 
-
+const handleInputChangeQty = (event) => {
+  setInputValueQty(event.target.value);
+};
+function handleClick(){
+  let createDataObj = {
+    id_product :  count._id,
+    colorSelect:  inputValueColor,
+    numberSelect:  inputValueQty 
+  } 
+  if (createDataObj.colorSelect == ""){
+    event.preventDefault()
+    alert("Veuillez choisir en cliqueant sur une couleur")
+    return
+}
+}
 
   return (
     <>
-      <section className="section-productDetails">
+      <section className="section-productDetails d-flex">
         <div className="product-details">
           <figure>
           {count &&<img src={count.imageUrl} alt=''/> }
           </figure>
           <div className="item__content">
             <div className="item__content__titlePrice">
-              {/* <h1 id="title">{thisProduct.name}</h1> */}
-              {/* <p>Price : <span id="price">  {thisProduct.price}   </span>€</p>    */}
+            {count &&<h1 id="title">{count.name}</h1>}
+            {count &&<p>Price : <span id="price">  {count.price}   </span>€</p>}   
             </div>
             <div className="item__content__description">
               <p className="item__content__description__title">Description :</p>
-              {/* <p id="description">  {thisProduct.description} </p>   */}
+              {count &&<p id="description">  {count.description} </p>}  
             </div>
             <div className="item__content__settings">
               <div className="item__content__settings__color">
                 <label htmlFor="color-select">Choose a color :</label>
-                <select name="color-select" id="colors">
+                <select name="color-select" id="colors"  onChange={handleInputChange}>
                   <option value="">-- choose one color --</option>
                   {/* {count.map((couch, index)=>(<option value="vert">vert</option> */}
 
@@ -63,11 +81,11 @@ console.log(count)
               </div>
               <div className="item__content__settings__quantity">
                 <label htmlFor="itemQuantity">Number article(s) (1-100) :</label>
-                <input type="number" name="itemQuantity" min="1" max="100" value="0" id="quantity"/>
+                <input type="number" name="itemQuantity" min="1" max="100" value="0" id="quantity"onChange={handleInputChangeQty}/>
               </div>
             </div>
             <div className="item__content__addButton">
-              <button id="addToCart">Add to cart</button>
+              <button id="addToCart" onClick={handleClick}>Add to cart</button>
             </div>
           </div>
 
