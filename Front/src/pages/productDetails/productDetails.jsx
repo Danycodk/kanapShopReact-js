@@ -26,29 +26,34 @@ useEffect(() => {
   }
   fetchTodoListOne();
 }, [productId]);
-const [inputValueColor, setInputValueColor] = useState('');
+// const [inputValueColor, setInputValueColor] = useState('');
 
-const handleInputChange = (event) => {
-  setInputValueColor(event.target.value);
-};
+// const handleInputChange = (event) => {
+//   setInputValueColor(event.target.value);
+// };
 /////
-const [inputValueQty, setInputValueQty] = useState('');
+// const [inputValueQty, setInputValueQty] = useState('');
 
-const handleInputChangeQty = (event) => {
-  setInputValueQty(event.target.value);
-};
-function handleClick(){
-  let createDataObj = {
-    id_product :  count._id,
-    colorSelect:  inputValueColor,
-    numberSelect:  inputValueQty 
-  } 
-  if (createDataObj.colorSelect == ""){
-    event.preventDefault()
-    alert("Veuillez choisir en cliqueant sur une couleur")
-    return
-}
-}
+// const handleInputChangeQty = (event) => {
+//   setInputValueQty(event.target.value);
+// };
+// function handleClick(){
+//   let createDataObj = {
+//     id_product :  count._id,
+//     colorSelect:  inputValueColor,
+//     numberSelect:  inputValueQty 
+//   } 
+//   if (createDataObj.colorSelect == ""){
+//     event.preventDefault()
+//     alert("Choose a color PLS")
+//     return
+//   }
+//   if(createDataObj.numberSelect < 1 || createDataObj.numberSelect >= 100 || createDataObj.numberSelect != parseInt(createDataObj.numberSelect)){
+//     event.preventDefault()
+//     alert("Choose a number between 1-100, no letters PLS")
+//     return
+//   }
+// }
 
   return (
     <>
@@ -69,7 +74,7 @@ function handleClick(){
             <div className="item__content__settings">
               <div className="item__content__settings__color">
                 <label htmlFor="color-select">Choose a color :</label>
-                <select name="color-select" id="colors"  onChange={handleInputChange}>
+                <select name="color-select" id="colors"  >
                   <option value="">-- choose one color --</option>
                   {/* {count.map((couch, index)=>(<option value="vert">vert</option> */}
 
@@ -81,11 +86,11 @@ function handleClick(){
               </div>
               <div className="item__content__settings__quantity">
                 <label htmlFor="itemQuantity">Number article(s) (1-100) :</label>
-                <input type="number" name="itemQuantity" min="1" max="100" value="0" id="quantity"onChange={handleInputChangeQty}/>
+                <input type="number" name="itemQuantity" min="1" max="100" value="0" id="quantity" />
               </div>
             </div>
             <div className="item__content__addButton">
-              <button id="addToCart" onClick={handleClick}>Add to cart</button>
+              <button id="addToCart" >Add to cart</button>
             </div>
           </div>
 
